@@ -118,7 +118,7 @@
 
 <h1 class="float-left">Photos</h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#pictureModal">
   Upload a photo
 </button>
 
@@ -126,14 +126,13 @@
 
 <div class="row"
 
-% @place.photos.each do |photo| %>
+<% @place.photos.each do |photo| %>
   <div class="col-12 col-sm-6">
-    <blockquote>
       <b><%= @photo.caption %></b>
       <%= image_tag photo.picture.url(:thumb) if photo.picture? %>
-    </blockquote>
   </div>
 <% end %>
+</br>
 </div>
 
 
