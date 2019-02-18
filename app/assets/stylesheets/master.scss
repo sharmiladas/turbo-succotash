@@ -78,3 +78,9 @@ blockquote p {
   position: absolute;
   left: 0;
 }
+
+.carousel-item.active, 
+.carousel-item-next, 
+.carousel-item-prev {
+  display: block;
+}
