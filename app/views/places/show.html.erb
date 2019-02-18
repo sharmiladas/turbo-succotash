@@ -75,20 +75,20 @@
 
 <div class="clear"></div>
 
-<div class="row"
 
 <% @place.comments.each do |comment| %>
+<div class="row">
 <div class="col-12 col-sm-6">
     <blockquote>
       <% if comment.humanized_rating.present? %>
       <b><%= comment.humanized_rating %></b> -
       <% end %>
-        <%= comment.message %>
+      <%= comment.message %>
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
-<% end %>
 </div>
+<% end %>
 
 <!-- Modal -->
 <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="pictureModalLabel" aria-hidden="true">
@@ -102,7 +102,7 @@
       </div>
       <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
-         <%= f.input :caption %>
+          <%= f.input :caption %>
           <%= f.input :picture %>
         </div>
         <div class="modal-footer">
@@ -124,16 +124,18 @@
 
 <div class="clear"></div>
 
-<div class="row"
+
 
 <% @place.photos.each do |photo| %>
-  <div class="col-12 col-sm-6">
-      <b><%= @photo.caption %></b>
+  <div class="row">
+    <div class="col-12 col-sm-6">
       <%= image_tag photo.picture.url(:thumb) if photo.picture? %>
+      <b><%= photo.caption %></b>
+      
   </div>
-<% end %>
-</br>
-</div>
 
+</div>
+</br>
+<% end %>
 
 
